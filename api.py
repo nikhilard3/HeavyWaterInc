@@ -36,6 +36,9 @@ def index():
     data = {'Prediction': prediction, 'Confidence': result}
     return json.dumps(data)
 
+@app.route('/html')
+def html():
+    return ("<form action = 'ml-api/' method = 'get'>         <p>Enter Document:</p> <p><input type = 'text' name = 'words' /></p> <p><input type = 'submit' value = 'submit' /></p> </form>")
 
 def load_ml_model():
     # Connect with the AWS s3 and save the model in the model path
